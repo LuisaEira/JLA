@@ -18,6 +18,15 @@ public class Main {
         // TODO code application logic here
         Fenetre fen = new Fenetre();
         fen.setVisible(true);
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
     }
     
 }
