@@ -31,7 +31,15 @@ public class Main {
         int dim_y_fen=450;
         Selection_Joueur joueur = new Selection_Joueur(0);
         Compteur n_tour = new Compteur(0);
-        int b11=0,b12=0,b13=0,b21=0,b22=0,b23=0,b31=0,b32=0,b33=0;
+        Position b11 = new Position(0);
+        Position b12 = new Position(0);
+        Position b13 = new Position(0);
+        Position b21 = new Position(0);
+        Position b22 = new Position(0);
+        Position b23 = new Position(0);
+        Position b31 = new Position(0);
+        Position b32 = new Position(0);
+        Position b33 = new Position(0);
         String Joueur_x; //nom joueur 1 - jeton X
         Joueur_x = JOptionPane.showInputDialog("Saisir le prenom du joueur X:");
         String Joueur_o;//nom joueur 2 - jeton O
