@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JLA;
+package Prueba3;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -19,11 +19,11 @@ public class Traitement implements ActionListener {
 
     public Selection_Joueur joueur;
     private JButton bt;
-    private int b;
+    private Position b;
     private Compteur n_tour;
     private JLabel message;
 
-    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout, int bo, Compteur n) {
+    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout, Position bo, Compteur n) {
         joueur = j;
         bt = bout;
         b = bo;
@@ -40,16 +40,19 @@ public class Traitement implements ActionListener {
             if (joueur.quelJoueur() == 1) {
                 bt.setFont(new Font("Serif", Font.BOLD, 45));
                 bt.setText("X");
-                b = 1;
+                b.Pos1();
                 n_tour.setComp();
                 joueur.Joueur_2();
             } else if (joueur.quelJoueur() == 2) {
                 bt.setFont(new Font("Serif", Font.BOLD, 45));
                 bt.setText("O");
-                b = 2;
+                b.Pos2();
                 n_tour.setComp();
                 joueur.Joueur_1();
             }
+        }
+        else if(n_tour.isComp() > 6){
+            
         }
     }
 }
