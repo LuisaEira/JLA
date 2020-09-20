@@ -22,13 +22,17 @@ public class Traitement implements ActionListener {
     private Position b;
     private Compteur n_tour;
     private JLabel message;
+    private int f;
+    private int c;
 
-    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout, Position bo, Compteur n) {
+    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout, Position bo, Compteur n,int row,int col) {
         joueur = j;
         bt = bout;
         b = bo;
         n_tour = n;
         message = Mens;
+        f=row;
+        c=col;
     }
 
     @Override
@@ -36,17 +40,145 @@ public class Traitement implements ActionListener {
 //        bt.setFont(new Font("Serif", Font.BOLD, 50));
 //        bt.setText("X");
         System.out.println(joueur);
-        if (n_tour.isComp() < 6&&b.quelPos()!=1&&b.quelPos()!=2) {
+        if (n_tour.isComp() < 6&&b.quelPos(f,c)!=1&&b.quelPos(f,c)!=2) {
             if (joueur.quelJoueur() == 1) {
                 bt.setFont(new Font("Serif", Font.BOLD, 45));
                 bt.setText("X");
-                b.Pos1();
+                b.Pos1(f,c);
+                if (b.quelPos(0, 0)==b.quelPos(0, 1)&&b.quelPos(0, 0)==b.quelPos(0, 2)){
+                    if (b.quelPos(0, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(1, 0)==b.quelPos(1, 1)&&b.quelPos(1, 0)==b.quelPos(1, 2)){
+                    if (b.quelPos(1, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(1, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(2, 0)==b.quelPos(2, 1)&&b.quelPos(2, 0)==b.quelPos(2, 2)){
+                    if (b.quelPos(2, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(2, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 0)==b.quelPos(1, 0)&&b.quelPos(0, 0)==b.quelPos(2, 0)){
+                    if (b.quelPos(0, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 1)==b.quelPos(1, 1)&&b.quelPos(0, 1)==b.quelPos(2, 1)){
+                    if (b.quelPos(0, 1)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 1)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 2)==b.quelPos(1, 2)&&b.quelPos(0, 2)==b.quelPos(2, 2)){
+                    if (b.quelPos(0, 2)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 2)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 0)==b.quelPos(1, 1)&&b.quelPos(0, 0)==b.quelPos(2, 2)){
+                    if (b.quelPos(0, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 2)==b.quelPos(1, 1)&&b.quelPos(0, 2)==b.quelPos(2, 0)){
+                    if (b.quelPos(0, 2)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 2)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
                 n_tour.setComp();
                 joueur.Joueur_2();
             } else if (joueur.quelJoueur() == 2) {
                 bt.setFont(new Font("Serif", Font.BOLD, 45));
                 bt.setText("O");
-                b.Pos2();
+                b.Pos2(f,c);
+                if (b.quelPos(0, 0)==b.quelPos(0, 1)&&b.quelPos(0, 0)==b.quelPos(0, 2)){
+                    if (b.quelPos(0, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(1, 0)==b.quelPos(1, 1)&&b.quelPos(1, 0)==b.quelPos(1, 2)){
+                    if (b.quelPos(1, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(1, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(2, 0)==b.quelPos(2, 1)&&b.quelPos(2, 0)==b.quelPos(2, 2)){
+                    if (b.quelPos(2, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(2, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 0)==b.quelPos(1, 0)&&b.quelPos(0, 0)==b.quelPos(2, 0)){
+                    if (b.quelPos(0, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 1)==b.quelPos(1, 1)&&b.quelPos(0, 1)==b.quelPos(2, 1)){
+                    if (b.quelPos(0, 1)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 1)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 2)==b.quelPos(1, 2)&&b.quelPos(0, 2)==b.quelPos(2, 2)){
+                    if (b.quelPos(0, 2)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 2)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 0)==b.quelPos(1, 1)&&b.quelPos(0, 0)==b.quelPos(2, 2)){
+                    if (b.quelPos(0, 0)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 0)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
+                else if (b.quelPos(0, 2)==b.quelPos(1, 1)&&b.quelPos(0, 2)==b.quelPos(2, 0)){
+                    if (b.quelPos(0, 2)==1){
+                       message.setText("Le Joueur 1 a gagné (Press Start New Game or New Round)");
+                    }
+                    else if (b.quelPos(0, 2)==2){
+                       message.setText("Le Joueur 2 a gagné (Press Start New Game or New Round)"); 
+                    }
+                }
                 n_tour.setComp();
                 joueur.Joueur_1();
             }
@@ -55,13 +187,13 @@ public class Traitement implements ActionListener {
             if (joueur.quelJoueur() == 1) {
                 bt.setFont(new Font("Serif", Font.BOLD, 45));
                 bt.setText("X");
-                b.Pos1();
+                b.Pos1(f,c);
                 n_tour.setComp();
                 joueur.Joueur_2();
             } else if (joueur.quelJoueur() == 2) {
                 bt.setFont(new Font("Serif", Font.BOLD, 45));
                 bt.setText("O");
-                b.Pos2();
+                b.Pos2(f,c);
                 n_tour.setComp();
                 joueur.Joueur_1();
             }

@@ -16,7 +16,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 
-//
 /**
  *
  * @author lucaa
@@ -32,15 +31,7 @@ public class Main {
         int dim_y_fen=450;
         Selection_Joueur joueur = new Selection_Joueur(0);
         Compteur n_tour = new Compteur(0);
-        Position b11 = new Position(0);
-        Position b12 = new Position(0);
-        Position b13 = new Position(0);
-        Position b21 = new Position(0);
-        Position b22 = new Position(0);
-        Position b23 = new Position(0);
-        Position b31 = new Position(0);
-        Position b32 = new Position(0);
-        Position b33 = new Position(0);
+        Position b_mat = new Position();
         String Joueur_x; //nom joueur 1 - jeton X
         Joueur_x = JOptionPane.showInputDialog("Saisir le prenom du joueur X:");
         String Joueur_o;//nom joueur 2 - jeton O
@@ -261,17 +252,17 @@ public class Main {
         constraints.fill = GridBagConstraints.BOTH;
         Fen.getContentPane().add(Mensaje,constraints);
         
-        NG.addActionListener(new Traitement_reset(n_tour,Mensaje,joueur,res_x,res_o,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b11,b12,b13,b21,b22,b23,b31,b32,b33));
-        NR.addActionListener(new Traitement_newround(n_tour,Mensaje,joueur,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b11,b12,b13,b21,b22,b23,b31,b32,b33));
-        bt11.addActionListener(new Traitement(Mensaje,joueur,bt11,b11,n_tour));
-        bt12.addActionListener(new Traitement(Mensaje,joueur,bt12,b12,n_tour));
-        bt13.addActionListener(new Traitement(Mensaje,joueur,bt13,b13,n_tour));
-        bt21.addActionListener(new Traitement(Mensaje,joueur,bt21,b21,n_tour));
-        bt22.addActionListener(new Traitement(Mensaje,joueur,bt22,b22,n_tour));
-        bt23.addActionListener(new Traitement(Mensaje,joueur,bt23,b23,n_tour));
-        bt31.addActionListener(new Traitement(Mensaje,joueur,bt31,b31,n_tour));
-        bt32.addActionListener(new Traitement(Mensaje,joueur,bt32,b32,n_tour));
-        bt33.addActionListener(new Traitement(Mensaje,joueur,bt33,b33,n_tour));
+        NG.addActionListener(new Traitement_reset(n_tour,Mensaje,joueur,res_x,res_o,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat));
+        NR.addActionListener(new Traitement_newround(n_tour,Mensaje,joueur,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat));
+        bt11.addActionListener(new Traitement(Mensaje,joueur,bt11,b_mat,n_tour,0,0));
+        bt12.addActionListener(new Traitement(Mensaje,joueur,bt12,b_mat,n_tour,0,1));
+        bt13.addActionListener(new Traitement(Mensaje,joueur,bt13,b_mat,n_tour,0,2));
+        bt21.addActionListener(new Traitement(Mensaje,joueur,bt21,b_mat,n_tour,1,0));
+        bt22.addActionListener(new Traitement(Mensaje,joueur,bt22,b_mat,n_tour,1,1));
+        bt23.addActionListener(new Traitement(Mensaje,joueur,bt23,b_mat,n_tour,1,2));
+        bt31.addActionListener(new Traitement(Mensaje,joueur,bt31,b_mat,n_tour,2,0));
+        bt32.addActionListener(new Traitement(Mensaje,joueur,bt32,b_mat,n_tour,2,1));
+        bt33.addActionListener(new Traitement(Mensaje,joueur,bt33,b_mat,n_tour,2,2));
 //        URL url = this.getClass().getResource("direccion de la.imagen");
 //
 //        ImageIcon icon = new ImageIcon(url);

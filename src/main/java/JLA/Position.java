@@ -10,20 +10,36 @@ package JLA;
  * @author lucaa
  */
 public class Position {
-    private int b;
-    public Position(int pos){
-        b=pos;
+    private int b[][] = new int[3][3];
+    public Position(){
+        b[0][0]=0;
+        b[0][1]=0;
+        b[0][2]=0;
+        b[1][0]=0;
+        b[1][1]=0;
+        b[1][2]=0;
+        b[2][0]=0;
+        b[2][1]=0;
+        b[2][2]=0;
     }
-    public int quelPos(){
-        return b;
+    public int quelPos(int row,int col){
+        return b[row][col];
     }
-    public void Pos1(){
-        b=1;
+    public void Pos1(int row,int col){
+        b[row][col]=1;
     }
-    public void Pos2(){
-        b=2;
+    public void Pos2(int row,int col){
+        b[row][col]=2;
     }
     public void resPos(){
-        b=0;
+        b[0][0]=0;
+        b[0][1]=0;
+        b[0][2]=0;
+        b[1][0]=0;
+        b[1][1]=0;
+        b[1][2]=0;
+        b[2][0]=0;
+        b[2][1]=0;
+        b[2][2]=0;
     }
 }

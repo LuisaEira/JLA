@@ -27,20 +27,12 @@ public class Traitement_newround implements ActionListener {
     private JButton but31;
     private JButton but32;
     private JButton but33;
-    private Position bu11;
-    private Position bu12;
-    private Position bu13;
-    private Position bu21;
-    private Position bu22;
-    private Position bu23;
-    private Position bu31;
-    private Position bu32;
-    private Position bu33;
+    private Position bu;
     public Selection_Joueur joueur;
     private int nRan;
     private Compteur cont;
     private JLabel message; 
-    public Traitement_newround(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo11,Position bo12,Position bo13,Position bo21,Position bo22,Position bo23,Position bo31,Position bo32,Position bo33){
+    public Traitement_newround(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo){
         but11=bout11;
         but12=bout12;
         but13=bout13;
@@ -50,15 +42,7 @@ public class Traitement_newround implements ActionListener {
         but31=bout31;
         but32=bout32;
         but33=bout33;
-        bu11=bo11;
-        bu12=bo12;
-        bu13=bo13;
-        bu21=bo21;
-        bu22=bo22;
-        bu23=bo23;
-        bu31=bo31;
-        bu32=bo32;
-        bu33=bo33;
+        bu=bo;
         joueur=Joueur;
         message=Mens;
         cont=Comp;
@@ -75,15 +59,7 @@ public class Traitement_newround implements ActionListener {
         but31.setText("");
         but32.setText("");
         but33.setText("");
-        bu11.resPos();
-        bu12.resPos();
-        bu13.resPos();
-        bu21.resPos();
-        bu22.resPos();
-        bu23.resPos();
-        bu31.resPos();
-        bu32.resPos();
-        bu33.resPos();
+        bu.resPos();
         cont.resetComp();
         Random miN = new Random();
         nRan = miN.nextInt(100);

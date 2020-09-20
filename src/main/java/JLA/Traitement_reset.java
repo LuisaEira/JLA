@@ -5,16 +5,13 @@
  */
 package JLA;
 //
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import java.util.Random;
-        
-/**
- *
- * @author lucaa
- */
+
 public class Traitement_reset implements ActionListener {
     private JLabel reset_x;
     private JLabel reset_o;
@@ -27,20 +24,12 @@ public class Traitement_reset implements ActionListener {
     private JButton but31;
     private JButton but32;
     private JButton but33;
-    private Position  bu11;
-    private Position  bu12;
-    private Position  bu13;
-    private Position  bu21;
-    private Position  bu22;
-    private Position  bu23;
-    private Position  bu31;
-    private Position  bu32;
-    private Position  bu33;
+    private Position  bu;
     private int  NRan;
     public Selection_Joueur joueur;
     public Compteur cont;
     private JLabel message;
-    public Traitement_reset(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo11,Position bo12,Position bo13,Position bo21,Position bo22,Position bo23,Position bo31,Position bo32,Position bo33){
+    public Traitement_reset(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo){
         reset_x=r_x;
         reset_o=r_o;
         but11=bout11;
@@ -52,15 +41,7 @@ public class Traitement_reset implements ActionListener {
         but31=bout31;
         but32=bout32;
         but33=bout33;
-        bu11=bo11;
-        bu12=bo12;
-        bu13=bo13;
-        bu21=bo21;
-        bu22=bo22;
-        bu23=bo23;
-        bu31=bo31;
-        bu32=bo32;
-        bu33=bo33;
+        bu=bo;
         joueur=Joueur;
         message=Mens;
         cont=Comp;
@@ -79,15 +60,7 @@ public class Traitement_reset implements ActionListener {
         but31.setText("");
         but32.setText("");
         but33.setText("");
-        bu11.resPos();
-        bu12.resPos();
-        bu13.resPos();
-        bu21.resPos();
-        bu22.resPos();
-        bu23.resPos();
-        bu31.resPos();
-        bu32.resPos();
-        bu33.resPos();
+        bu.resPos();
         cont.resetComp();
         Random miN = new Random();
         NRan = miN.nextInt(100);
