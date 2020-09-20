@@ -5,6 +5,7 @@
  */
 package JLA;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -51,6 +52,7 @@ public class Main {
         constraints.weighty = 1.0;
         constraints.weightx = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
+        bt11.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt11,constraints);
 //        constraints.weighty = 1.0;
 //        constraints.weightx = 1.0;
@@ -61,6 +63,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt12.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt12,constraints);
         
         JButton bt13 = new JButton("");
@@ -69,6 +72,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt13.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt13,constraints);
         
         JButton bt21 = new JButton("");
@@ -77,6 +81,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt21.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt21,constraints);
         
         JButton bt22 = new JButton("");
@@ -85,6 +90,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt22.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt22,constraints);
         
         JButton bt23 = new JButton("");
@@ -93,6 +99,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt23.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt23,constraints);
         
         JButton bt31 = new JButton("");
@@ -101,6 +108,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt31.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt31,constraints);
         JButton bt32 = new JButton("");
         constraints.gridx = 1;
@@ -108,6 +116,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt32.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt32,constraints);
         
         JButton bt33 = new JButton("");
@@ -116,6 +125,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
+        bt33.setBackground(Color.lightGray);
         Fen.getContentPane().add(bt33,constraints);
         Fen.setVisible(true);
         constraints.weighty = 0.0;
