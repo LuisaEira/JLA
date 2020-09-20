@@ -33,6 +33,7 @@ public class Main {
         Compteur n_tour = new Compteur(0);
         Position b_mat = new Position();
         Result resultee = new Result("0","0");
+        Band band = new Band();
         String Joueur_x; //nom joueur 1 - jeton X
         Joueur_x = JOptionPane.showInputDialog("Saisir le prenom du joueur X:");
         String Joueur_o;//nom joueur 2 - jeton O
@@ -253,17 +254,36 @@ public class Main {
         constraints.fill = GridBagConstraints.BOTH;
         Fen.getContentPane().add(Mensaje,constraints);
         
-        NG.addActionListener(new Traitement_reset(n_tour,Mensaje,joueur,res_x,res_o,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat,resultee));
-        NR.addActionListener(new Traitement_newround(n_tour,Mensaje,joueur,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat));
-        bt11.addActionListener(new Traitement(Mensaje,joueur,bt11,b_mat,n_tour,0,0,res_x,res_o,resultee));
-        bt12.addActionListener(new Traitement(Mensaje,joueur,bt12,b_mat,n_tour,0,1,res_x,res_o,resultee));
-        bt13.addActionListener(new Traitement(Mensaje,joueur,bt13,b_mat,n_tour,0,2,res_x,res_o,resultee));
-        bt21.addActionListener(new Traitement(Mensaje,joueur,bt21,b_mat,n_tour,1,0,res_x,res_o,resultee));
-        bt22.addActionListener(new Traitement(Mensaje,joueur,bt22,b_mat,n_tour,1,1,res_x,res_o,resultee));
-        bt23.addActionListener(new Traitement(Mensaje,joueur,bt23,b_mat,n_tour,1,2,res_x,res_o,resultee));
-        bt31.addActionListener(new Traitement(Mensaje,joueur,bt31,b_mat,n_tour,2,0,res_x,res_o,resultee));
-        bt32.addActionListener(new Traitement(Mensaje,joueur,bt32,b_mat,n_tour,2,1,res_x,res_o,resultee));
-        bt33.addActionListener(new Traitement(Mensaje,joueur,bt33,b_mat,n_tour,2,2,res_x,res_o,resultee));
+        JButton Sel = new JButton("Selection Jetton");
+        constraints.weightx = 1.0;
+        constraints.gridx = 4;
+        constraints.gridy = 8;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 1;
+        constraints.fill = GridBagConstraints.BOTH;
+        Fen.getContentPane().add(Sel,constraints);
+        
+        JButton Dep = new JButton("Deplace Jetton");
+        constraints.weightx = 1.0;
+        constraints.gridx = 5;
+        constraints.gridy = 8;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 1;
+        constraints.fill = GridBagConstraints.BOTH;
+        Fen.getContentPane().add(Dep,constraints);
+        
+        NG.addActionListener(new Traitement_reset(n_tour,Mensaje,joueur,res_x,res_o,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat,resultee,band));
+        NR.addActionListener(new Traitement_newround(n_tour,Mensaje,joueur,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat,band));
+        bt11.addActionListener(new Traitement(Mensaje,joueur,bt11,b_mat,n_tour,0,0,res_x,res_o,resultee,band,Dep,Sel));
+        bt12.addActionListener(new Traitement(Mensaje,joueur,bt12,b_mat,n_tour,0,1,res_x,res_o,resultee,band,Dep,Sel));
+        bt13.addActionListener(new Traitement(Mensaje,joueur,bt13,b_mat,n_tour,0,2,res_x,res_o,resultee,band,Dep,Sel));
+        bt21.addActionListener(new Traitement(Mensaje,joueur,bt21,b_mat,n_tour,1,0,res_x,res_o,resultee,band,Dep,Sel));
+        bt22.addActionListener(new Traitement(Mensaje,joueur,bt22,b_mat,n_tour,1,1,res_x,res_o,resultee,band,Dep,Sel));
+        bt23.addActionListener(new Traitement(Mensaje,joueur,bt23,b_mat,n_tour,1,2,res_x,res_o,resultee,band,Dep,Sel));
+        bt31.addActionListener(new Traitement(Mensaje,joueur,bt31,b_mat,n_tour,2,0,res_x,res_o,resultee,band,Dep,Sel));
+        bt32.addActionListener(new Traitement(Mensaje,joueur,bt32,b_mat,n_tour,2,1,res_x,res_o,resultee,band,Dep,Sel));
+        bt33.addActionListener(new Traitement(Mensaje,joueur,bt33,b_mat,n_tour,2,2,res_x,res_o,resultee,band,Dep,Sel));
+        Sel.addActionListener(new Traitement_sel(band,b_mat,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,n_tour));
 //        URL url = this.getClass().getResource("direccion de la.imagen");
 //
 //        ImageIcon icon = new ImageIcon(url);

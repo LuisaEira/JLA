@@ -32,7 +32,9 @@ public class Traitement_newround implements ActionListener {
     private int nRan;
     private Compteur cont;
     private JLabel message; 
-    public Traitement_newround(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo){
+    private Band band;
+    
+    public Traitement_newround(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo, Band ba){
         but11=bout11;
         but12=bout12;
         but13=bout13;
@@ -46,6 +48,7 @@ public class Traitement_newround implements ActionListener {
         joueur=Joueur;
         message=Mens;
         cont=Comp;
+        band=ba;
     }
 
     @Override
@@ -61,6 +64,8 @@ public class Traitement_newround implements ActionListener {
         but33.setText("");
         bu.resPos();
         cont.resetComp();
+        band.resetBand();
+        band.resetBand2();
         Random miN = new Random();
         nRan = miN.nextInt(100);
         if (nRan<50){

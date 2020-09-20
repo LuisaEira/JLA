@@ -22,6 +22,10 @@ public class Compteur {
         cont++;
     }
     
+    public void susComp(){
+        cont--;
+    }
+    
     public void resetComp(){
         cont=0;
     }
