@@ -6,6 +6,7 @@
 package JLA;
 //
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -588,6 +589,8 @@ public class Traitement implements ActionListener {
                 if (b.quelPos(f, c) == 1) {
                     b.setLigne(f);
                     b.setColonne(c);
+
+                    
                 }
             } else if (joueur.quelJoueur() == 2) {
                 if (b.quelPos(f, c) == 2) {
