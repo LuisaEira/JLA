@@ -36,7 +36,7 @@ public class Traitement implements ActionListener {
 //        bt.setFont(new Font("Serif", Font.BOLD, 50));
 //        bt.setText("X");
         System.out.println(joueur);
-        if (n_tour.isComp() < 6) {
+        if (n_tour.isComp() < 6&&b.quelPos()!=1&&b.quelPos()!=2) {
             if (joueur.quelJoueur() == 1) {
                 bt.setFont(new Font("Serif", Font.BOLD, 45));
                 bt.setText("X");
@@ -52,7 +52,19 @@ public class Traitement implements ActionListener {
             }
         }
         else if(n_tour.isComp() > 6){
-            
+            if (joueur.quelJoueur() == 1) {
+                bt.setFont(new Font("Serif", Font.BOLD, 45));
+                bt.setText("X");
+                b.Pos1();
+                n_tour.setComp();
+                joueur.Joueur_2();
+            } else if (joueur.quelJoueur() == 2) {
+                bt.setFont(new Font("Serif", Font.BOLD, 45));
+                bt.setText("O");
+                b.Pos2();
+                n_tour.setComp();
+                joueur.Joueur_1();
+            }
         }
     }
 }
