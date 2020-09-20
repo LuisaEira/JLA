@@ -253,7 +253,7 @@ public class Main {
         constraints.fill = GridBagConstraints.BOTH;
         Fen.getContentPane().add(Mensaje,constraints);
         
-        NG.addActionListener(new Traitement_reset(n_tour,Mensaje,joueur,res_x,res_o,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat));
+        NG.addActionListener(new Traitement_reset(n_tour,Mensaje,joueur,res_x,res_o,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat,resultee));
         NR.addActionListener(new Traitement_newround(n_tour,Mensaje,joueur,bt11,bt12,bt13,bt21,bt22,bt23,bt31,bt32,bt33,b_mat));
         bt11.addActionListener(new Traitement(Mensaje,joueur,bt11,b_mat,n_tour,0,0,res_x,res_o,resultee));
         bt12.addActionListener(new Traitement(Mensaje,joueur,bt12,b_mat,n_tour,0,1,res_x,res_o,resultee));

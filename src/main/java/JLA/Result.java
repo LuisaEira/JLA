@@ -30,4 +30,10 @@ public class Result {
         int dres_o = Integer.parseInt(ro);
         ro=(String.valueOf(dres_o+1));
     }
+    public void resetRx(){
+        rx="0";
+    }
+    public void resetRo(){
+        ro="0";
+    }
 }

@@ -29,7 +29,8 @@ public class Traitement_reset implements ActionListener {
     public Selection_Joueur joueur;
     public Compteur cont;
     private JLabel message;
-    public Traitement_reset(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo){
+    private Result res;
+    public Traitement_reset(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo,Result result){
         reset_x=r_x;
         reset_o=r_o;
         but11=bout11;
@@ -45,6 +46,7 @@ public class Traitement_reset implements ActionListener {
         joueur=Joueur;
         message=Mens;
         cont=Comp;
+        res=result;
     }
 
     @Override
@@ -62,6 +64,8 @@ public class Traitement_reset implements ActionListener {
         but33.setText("");
         bu.resPos();
         cont.resetComp();
+        res.resetRx();
+        res.resetRo();
         Random miN = new Random();
         NRan = miN.nextInt(100);
         if (NRan<50){
