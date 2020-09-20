@@ -29,10 +29,9 @@ public class Traitement implements ActionListener {
     private int f;
     private int c;
     private Band band;
-    private JButton dep;
     private JButton sel;
 
-    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout, Position bo, Compteur n, int row, int col, JLabel re_x, JLabel re_o, Result result, Band ba, JButton Dep, JButton Sel) {
+    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout, Position bo, Compteur n, int row, int col, JLabel re_x, JLabel re_o, Result result, Band ba, JButton Sel) {
         joueur = j;
         bt = bout;
         b = bo;
@@ -44,7 +43,6 @@ public class Traitement implements ActionListener {
         res_o = re_o;
         res = result;
         band = ba;
-        dep = Dep;
         sel = Sel;
     }
 
@@ -54,6 +52,7 @@ public class Traitement implements ActionListener {
 //        bt.setText("X");
         //System.out.println(joueur);
         if (n_tour.isComp() < 6 && b.quelPos(f, c) != 1 && b.quelPos(f, c) != 2 && band.isBand() == 0) {
+            System.out.println(band.isBand2());
             if (band.isBand2() == 0) {
                 if (joueur.quelJoueur() == 1) {
                     bt.setFont(new Font("Serif", Font.BOLD, 45));
@@ -158,6 +157,10 @@ public class Traitement implements ActionListener {
                     }
                     n_tour.setComp();
                     joueur.Joueur_2();
+                    if (band.isBand() == 0) {
+                        message.setText("Joueur 2 c'est à toi");
+                    }
+
                 } else if (joueur.quelJoueur() == 2) {
                     bt.setFont(new Font("Serif", Font.BOLD, 45));
                     bt.setText("O");
@@ -261,8 +264,13 @@ public class Traitement implements ActionListener {
                     }
                     n_tour.setComp();
                     joueur.Joueur_1();
+                    if (band.isBand() == 0) {
+                        message.setText("Joueur 1 c'est à toi");
+                    }
                 }
+                System.out.println(band.isBand2() + "no entro");
             } else if (band.isBand2() == 1) {
+                System.out.println(band.isBand2() + "entro");
                 if (joueur.quelJoueur() == 1) {
                     if (b.quelLignedef() == 0 && b.quelColdef() == 0) {
                         if (((f == 0 && c == 1) || (f == 1 && c == 0) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
@@ -417,61 +425,61 @@ public class Traitement implements ActionListener {
                         }
                         n_tour.setComp();
                         joueur.Joueur_2();
-                    } else if (joueur.quelJoueur() == 2) {
-                        if (b.quelLignedef() == 0 && b.quelColdef() == 0) {
-                            if (((f == 0 && c == 1) || (f == 1 && c == 0) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 0 && b.quelColdef() == 2) {
-                            if (((f == 0 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 2 && b.quelColdef() == 0) {
-                            if (((f == 1 && c == 0) || (f == 2 && c == 1) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 2 && b.quelColdef() == 2) {
-                            if (((f == 2 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 0 && b.quelColdef() == 1) {
-                            if (((f == 0 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 0 && c == 2)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 1 && b.quelColdef() == 0) {
-                            if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 0)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 2 && b.quelColdef() == 1) {
-                            if (((f == 2 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 1 && b.quelColdef() == 2) {
-                            if (((f == 0 && c == 2) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
-                        } else if (b.quelLignedef() == 1 && b.quelColdef() == 1) {
-                            if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 0 && c == 2) || (f == 1 && c == 0) || (f == 1 && c == 2) || (f == 2 && c == 0) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                                bt.setFont(new Font("Serif", Font.BOLD, 45));
-                                bt.setText("O");
-                                b.Pos2(f, c);
-                            }
+                    }
+                } else if (joueur.quelJoueur() == 2) {
+                    if (b.quelLignedef() == 0 && b.quelColdef() == 0) {
+                        if (((f == 0 && c == 1) || (f == 1 && c == 0) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 0 && b.quelColdef() == 2) {
+                        if (((f == 0 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 2 && b.quelColdef() == 0) {
+                        if (((f == 1 && c == 0) || (f == 2 && c == 1) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 2 && b.quelColdef() == 2) {
+                        if (((f == 2 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 0 && b.quelColdef() == 1) {
+                        if (((f == 0 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 0 && c == 2)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 1 && b.quelColdef() == 0) {
+                        if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 0)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 2 && b.quelColdef() == 1) {
+                        if (((f == 2 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 1 && b.quelColdef() == 2) {
+                        if (((f == 0 && c == 2) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
+                        }
+                    } else if (b.quelLignedef() == 1 && b.quelColdef() == 1) {
+                        if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 0 && c == 2) || (f == 1 && c == 0) || (f == 1 && c == 2) || (f == 2 && c == 0) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
+                            bt.setFont(new Font("Serif", Font.BOLD, 45));
+                            bt.setText("O");
+                            b.Pos2(f, c);
                         }
                     }
                     if (b.quelPos(0, 0) == b.quelPos(0, 1) && b.quelPos(0, 0) == b.quelPos(0, 2)) {
