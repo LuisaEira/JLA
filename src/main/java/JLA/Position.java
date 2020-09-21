@@ -29,6 +29,9 @@ public class Position {
     public int quelPos(int row,int col){
         return b[row][col];
     }
+    public void Pos(int row, int col, int joueur){
+        b[row][col]=joueur;
+    }
     public void Pos1(int row,int col){
         b[row][col]=1;
     }
@@ -79,5 +82,13 @@ public class Position {
         b[2][0]=0;
         b[2][1]=0;
         b[2][2]=0;
+    }
+    public void clear(){
+        for (int i = 0; i<3; i++){
+            for (int j = 0; j<3; j++){
+                if (b[i][j] == 3)
+                    b[i][j] = 0;
+            }
+        }
     }
 }

@@ -25,14 +25,20 @@ public class Traitement_newround implements ActionListener {
     private Compteur cont;
     private JLabel message; 
     private Band band;
-    
-    public Traitement_newround(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JButton bout[][],Position bo, Band ba){
+    private JLabel JX;
+    private JLabel JO;
+    private Flag flag;
+
+    public Traitement_newround(Flag fl, JLabel jx,JLabel jo,Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JButton bout[][],Position bo, Band ba){
         but=bout;
         bu=bo;
         joueur=Joueur;
         message=Mens;
         cont=Comp;
         band=ba;
+        JX = jx;
+        JO = jo;
+        flag = fl;
     }
 
     @Override
@@ -54,11 +60,12 @@ public class Traitement_newround implements ActionListener {
         nRan = miN.nextInt(100);
         if (nRan<50){
             joueur.Joueur_1();
-            message.setText("Joueur 1 c'est à Toi");
+            message.setText(JX.getText() + ", c'est a Toi");
         }
         else if(nRan>=50){
             joueur.Joueur_2();
-            message.setText("Joueur 2 c'est à Toi");
+            message.setText(JO.getText() + ", c'est a Toi");
         }
+        flag.Down();
     }
 }

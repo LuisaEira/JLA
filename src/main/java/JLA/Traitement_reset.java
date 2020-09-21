@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Traitement_reset implements ActionListener {
     private JLabel reset_x;
@@ -22,9 +23,12 @@ public class Traitement_reset implements ActionListener {
     public Compteur cont;
     private JLabel message;
     private Result res;
-    private Band band;        
+    private Band band;
+    private JLabel jx;
+    private JLabel jo;
+    private Flag flag;
             
-    public Traitement_reset(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout[][],Position bo,Result result,Band ba){
+    public Traitement_reset(Flag fl, JLabel JX, JLabel JO, Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout[][],Position bo,Result result,Band ba){
         reset_x=r_x;
         reset_o=r_o;
         but=bout;
@@ -34,6 +38,9 @@ public class Traitement_reset implements ActionListener {
         cont=Comp;
         res=result;
         band=ba;
+        jx = JX;
+        jo = JO;
+        flag = fl;
     }
 
     @Override
@@ -57,15 +64,22 @@ public class Traitement_reset implements ActionListener {
         band.resetBand2();
         Random miN = new Random();
         NRan = miN.nextInt(100);
+        String Joueur_x;
+        Joueur_x = JOptionPane.showInputDialog("Saisir le prenom du joueur X:");
+        jx.setText(Joueur_x);
+        String Joueur_o;
+        Joueur_o = JOptionPane.showInputDialog("Saisir le prenom du joueur O:");
+        jo.setText(Joueur_o);
         if (NRan<50){
             joueur.Joueur_1();
 //            System.out.println(J);
-            message.setText("Joueur 1 c'est à Toi");
+            message.setText(Joueur_x + ", c'est a Toi");
         }
         else if(NRan>=50){
             joueur.Joueur_2();
 //            System.out.println(J);
-            message.setText("Joueur 2 c'est à Toi");
+            message.setText(Joueur_o + ", c'est a Toi");
         }
+        flag.Down();
     }
 }

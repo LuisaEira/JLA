@@ -36,13 +36,14 @@ public class Main {
         Result resultee = new Result("0","0");
         JButton [][]bt = new JButton[3][3];
         Band band = new Band();
-        String Joueur_x; //nom joueur 1 - jeton X
-        Joueur_x = JOptionPane.showInputDialog("Saisir le prenom du joueur X:");
-        String Joueur_o;//nom joueur 2 - jeton O
-        Joueur_o = JOptionPane.showInputDialog("Saisir le prenom du joueur O:");
+        Flag flag = new Flag();
+        String Joueur_x = ""; //nom joueur 1 - jeton X
+//        Joueur_x = JOptionPane.showInputDialog("Saisir le prenom du joueur X:");
+        String Joueur_o = ""; //nom joueur 2 - jeton O
+//        Joueur_o = JOptionPane.showInputDialog("Saisir le prenom du joueur O:");
         JFrame Fen = new JFrame();
         Fen.setSize(dim_x_fen,dim_y_fen);
-        Fen.setTitle("Jeu de L'Araignée");
+        Fen.setTitle("Jeu de L'Araignee");
         Fen.getContentPane().setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         
@@ -55,7 +56,7 @@ public class Main {
         constraints.weighty = 1.0;
         constraints.weightx = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[0][0].setBackground(Color.lightGray);
+        bt[0][0].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[0][0],constraints);
 //        constraints.weighty = 1.0;
 //        constraints.weightx = 1.0;
@@ -67,7 +68,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[0][1].setBackground(Color.lightGray);
+        bt[0][1].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[0][1],constraints);
         
 //        JButton bt13 = new JButton("");
@@ -77,7 +78,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[0][2].setBackground(Color.lightGray);
+        bt[0][2].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[0][2],constraints);
         
 //        JButton bt21 = new JButton("");
@@ -87,7 +88,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[1][0].setBackground(Color.lightGray);
+        bt[1][0].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[1][0],constraints);
         
 //        JButton bt22 = new JButton("");
@@ -97,7 +98,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[1][1].setBackground(Color.lightGray);
+        bt[1][1].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[1][1],constraints);
         
 //        JButton bt23 = new JButton("");
@@ -107,7 +108,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[1][2].setBackground(Color.lightGray);
+        bt[1][2].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[1][2],constraints);
         
 //        JButton bt31 = new JButton("");
@@ -117,7 +118,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[2][0].setBackground(Color.lightGray);
+        bt[2][0].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[2][0],constraints);
         
 //        JButton bt32 = new JButton("");
@@ -127,7 +128,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[2][1].setBackground(Color.lightGray);
+        bt[2][1].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[2][1],constraints);
         
 //        JButton bt33 = new JButton("");
@@ -137,7 +138,7 @@ public class Main {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.fill = GridBagConstraints.BOTH;
-        bt[2][2].setBackground(Color.lightGray);
+        bt[2][2].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[2][2],constraints);
         Fen.setVisible(true);
         constraints.weighty = 0.0;
@@ -152,8 +153,8 @@ public class Main {
         constraints.fill = GridBagConstraints.CENTER;
         Fen.getContentPane().add(blanc2,constraints);
 
-        JLabel J1 = new JLabel("X       Joueur 1: ");
-        J1.setFont(new Font("Serif", Font.PLAIN, 16));
+        JLabel J1 = new JLabel("X  : ");
+        J1.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 0.5;
         constraints.gridx = 4;
         constraints.gridy = 4;
@@ -162,8 +163,8 @@ public class Main {
         constraints.fill = GridBagConstraints.CENTER;
         Fen.getContentPane().add(J1,constraints);
         
-        JLabel J2 = new JLabel("O       Joueur 2: ");
-        J2.setFont(new Font("Serif", Font.PLAIN, 16));
+        JLabel J2 = new JLabel("O  : ");
+        J2.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 0.5;
         constraints.gridx = 4;
         constraints.gridy = 6;
@@ -173,7 +174,7 @@ public class Main {
         Fen.getContentPane().add(J2,constraints);
         
         JLabel JX = new JLabel(Joueur_x);
-        JX.setFont(new Font("Serif", Font.PLAIN, 16));
+        JX.setFont(new Font("Serif", Font.BOLD, 20));
         constraints.weightx = 1.0;
         constraints.gridx = 5;
         constraints.gridy = 4;
@@ -183,7 +184,7 @@ public class Main {
         Fen.getContentPane().add(JX,constraints);
         
         JLabel JO = new JLabel(Joueur_o);
-        JO.setFont(new Font("Serif", Font.PLAIN, 16));
+        JO.setFont(new Font("Serif", Font.BOLD, 20));
         constraints.weightx = 1.0;
         constraints.gridx = 5;
         constraints.gridy = 6;
@@ -203,7 +204,7 @@ public class Main {
         Fen.getContentPane().add(res,constraints);
         
         JLabel res_x = new JLabel(resultee.isRx());
-        res_x.setFont(new Font("Serif", Font.PLAIN, 16));
+        res_x.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 1.0;
         constraints.gridx = 6;
         constraints.gridy = 4;
@@ -213,7 +214,7 @@ public class Main {
         Fen.getContentPane().add(res_x,constraints);
         
         JLabel res_o = new JLabel(resultee.isRo());
-        res_o.setFont(new Font("Serif", Font.PLAIN, 16));
+        res_o.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 1.0;
         constraints.gridx = 6;
         constraints.gridy = 6;
@@ -242,7 +243,8 @@ public class Main {
         Fen.getContentPane().add(NG,constraints);
         
         JLabel Mensaje = new JLabel("Press Start New Game");
-        Mensaje.setFont(new Font("Serif", Font.PLAIN, 16));
+        Mensaje.setFont(new Font("Serif", Font.BOLD, 16));
+        Mensaje.setForeground(Color.red);
         constraints.weightx = 1.0;
         constraints.gridx = 4;
         constraints.gridy = 2;
@@ -251,28 +253,31 @@ public class Main {
         constraints.fill = GridBagConstraints.BOTH;
         Fen.getContentPane().add(Mensaje,constraints);
         
-        JButton Sel = new JButton("Selection Jetton");
-        constraints.weightx = 1.0;
-        constraints.gridx = 4;
-        constraints.gridy = 8;
-        constraints.gridwidth = 1;
-        constraints.gridheight = 1;
-        constraints.fill = GridBagConstraints.BOTH;
-        Fen.getContentPane().add(Sel,constraints);
+//        JButton Sel = new JButton("Selection Jetton");
+//        constraints.weightx = 1.0;
+//        constraints.gridx = 4;
+//        constraints.gridy = 8;
+//        constraints.gridwidth = 1;
+//        constraints.gridheight = 1;
+//        constraints.fill = GridBagConstraints.BOTH;
+//        Fen.getContentPane().add(Sel,constraints);
         
         
-        NG.addActionListener(new Traitement_reset(n_tour,Mensaje,joueur,res_x,res_o,bt,b_mat,resultee,band));
-        NR.addActionListener(new Traitement_newround(n_tour,Mensaje,joueur,bt,b_mat,band));
-        bt[0][0].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,0,0,res_x,res_o,resultee,band,Sel));
-        bt[0][1].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,0,1,res_x,res_o,resultee,band,Sel));
-        bt[0][2].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,0,2,res_x,res_o,resultee,band,Sel));
-        bt[1][0].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,1,0,res_x,res_o,resultee,band,Sel));
-        bt[1][1].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,1,1,res_x,res_o,resultee,band,Sel));
-        bt[1][2].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,1,2,res_x,res_o,resultee,band,Sel));
-        bt[2][0].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,2,0,res_x,res_o,resultee,band,Sel));
-        bt[2][1].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,2,1,res_x,res_o,resultee,band,Sel));
-        bt[2][2].addActionListener(new Traitement(Mensaje,joueur,bt,b_mat,n_tour,2,2,res_x,res_o,resultee,band,Sel));
-        Sel.addActionListener(new Traitement_sel(band,b_mat,bt,n_tour));
+        NG.addActionListener(new Traitement_reset(flag,JX,JO,n_tour,Mensaje,joueur,res_x,res_o,bt,b_mat,resultee,band));
+        NR.addActionListener(new Traitement_newround(flag,JX,JO,n_tour,Mensaje,joueur,bt,b_mat,band));
+        bt[0][0].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,0,0,res_x,res_o,resultee,band));
+        bt[0][1].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,0,1,res_x,res_o,resultee,band));
+        bt[0][2].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,0,2,res_x,res_o,resultee,band));
+        bt[1][0].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,1,0,res_x,res_o,resultee,band));
+        bt[1][1].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,1,1,res_x,res_o,resultee,band));
+        bt[1][2].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,1,2,res_x,res_o,resultee,band));
+        bt[2][0].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,2,0,res_x,res_o,resultee,band));
+        bt[2][1].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,2,1,res_x,res_o,resultee,band));
+        bt[2][2].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,2,2,res_x,res_o,resultee,band));
+
+        
+//        Sel.addActionListener(new Traitement_sel(band,b_mat,bt,n_tour));
+
 //        URL url = this.getClass().getResource("direccion de la.imagen");
 //
 //        ImageIcon icon = new ImageIcon(url);

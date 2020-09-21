@@ -24,4 +24,16 @@ public class Selection_Joueur {
     public void Joueur_2(){
         Joueur=2;
     }
+    public void Changer(){
+        if (Joueur == 1)
+            Joueur = 2;
+        else
+            Joueur = 1;
+    }
+    public String Markeur(){
+        if(Joueur == 1)
+            return "X";
+        else
+            return "O";
+    }
 }

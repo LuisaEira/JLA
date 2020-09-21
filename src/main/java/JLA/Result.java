@@ -22,6 +22,12 @@ public class Result {
     public String isRo(){
         return ro;
     }
+    public void setR(int n){
+        if (n == 1)
+            setRx();
+        else
+            setRo();
+    }
     public void setRx(){
         int dres_x = Integer.parseInt(rx);
         rx=(String.valueOf(dres_x+1));
