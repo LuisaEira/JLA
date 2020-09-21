@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 public class Traitement implements ActionListener {
 
     public Selection_Joueur joueur;
-    private JButton bt;
+    private JButton bt[][] = new JButton[3][3];
     private Position b;
     private Compteur n_tour;
     private JLabel message;
@@ -32,7 +32,7 @@ public class Traitement implements ActionListener {
     private Band band;
     private JButton sel;
 
-    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout, Position bo, Compteur n, int row, int col, JLabel re_x, JLabel re_o, Result result, Band ba, JButton Sel) {
+    public Traitement(JLabel Mens, Selection_Joueur j, JButton bout[][], Position bo, Compteur n, int row, int col, JLabel re_x, JLabel re_o, Result result, Band ba, JButton Sel) {
         joueur = j;
         bt = bout;
         b = bo;
@@ -56,8 +56,8 @@ public class Traitement implements ActionListener {
             System.out.println(band.isBand2());
             if (band.isBand2() == 0) {
                 if (joueur.quelJoueur() == 1) {
-                    bt.setFont(new Font("Serif", Font.BOLD, 45));
-                    bt.setText("X");
+                    bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                    bt[f][c].setText("X");
                     b.Pos1(f, c);
                     if (b.quelPos(0, 0) == b.quelPos(0, 1) && b.quelPos(0, 0) == b.quelPos(0, 2)) {
                         if (b.quelPos(0, 0) == 1) {
@@ -163,8 +163,8 @@ public class Traitement implements ActionListener {
                     }
 
                 } else if (joueur.quelJoueur() == 2) {
-                    bt.setFont(new Font("Serif", Font.BOLD, 45));
-                    bt.setText("O");
+                    bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                    bt[f][c].setText("O");
                     b.Pos2(f, c);
                     if (b.quelPos(0, 0) == b.quelPos(0, 1) && b.quelPos(0, 0) == b.quelPos(0, 2)) {
                         if (b.quelPos(0, 0) == 1) {
@@ -275,56 +275,56 @@ public class Traitement implements ActionListener {
                 if (joueur.quelJoueur() == 1) {
                     if (b.quelLignedef() == 0 && b.quelColdef() == 0) {
                         if (((f == 0 && c == 1) || (f == 1 && c == 0) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 0 && b.quelColdef() == 2) {
                         if (((f == 0 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 2 && b.quelColdef() == 0) {
                         if (((f == 1 && c == 0) || (f == 2 && c == 1) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 2 && b.quelColdef() == 2) {
                         if (((f == 2 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 0 && b.quelColdef() == 1) {
                         if (((f == 0 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 0 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 1 && b.quelColdef() == 0) {
                         if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 0)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 2 && b.quelColdef() == 1) {
                         if (((f == 2 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 1 && b.quelColdef() == 2) {
                         if (((f == 0 && c == 2) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     } else if (b.quelLignedef() == 1 && b.quelColdef() == 1) {
                         if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 0 && c == 2) || (f == 1 && c == 0) || (f == 1 && c == 2) || (f == 2 && c == 0) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("X");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("X");
                             b.Pos1(f, c);
                         }
                     }
@@ -430,56 +430,56 @@ public class Traitement implements ActionListener {
                 } else if (joueur.quelJoueur() == 2) {
                     if (b.quelLignedef() == 0 && b.quelColdef() == 0) {
                         if (((f == 0 && c == 1) || (f == 1 && c == 0) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 0 && b.quelColdef() == 2) {
                         if (((f == 0 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 2 && b.quelColdef() == 0) {
                         if (((f == 1 && c == 0) || (f == 2 && c == 1) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 2 && b.quelColdef() == 2) {
                         if (((f == 2 && c == 1) || (f == 1 && c == 2) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 0 && b.quelColdef() == 1) {
                         if (((f == 0 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 0 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 1 && b.quelColdef() == 0) {
                         if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 0)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 2 && b.quelColdef() == 1) {
                         if (((f == 2 && c == 0) || (f == 1 && c == 0) || (f == 1 && c == 1) || (f == 1 && c == 2) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 1 && b.quelColdef() == 2) {
                         if (((f == 0 && c == 2) || (f == 0 && c == 1) || (f == 1 && c == 1) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     } else if (b.quelLignedef() == 1 && b.quelColdef() == 1) {
                         if (((f == 0 && c == 0) || (f == 0 && c == 1) || (f == 0 && c == 2) || (f == 1 && c == 0) || (f == 1 && c == 2) || (f == 2 && c == 0) || (f == 2 && c == 1) || (f == 2 && c == 2)) && b.quelPos(f, c) == 0) {
-                            bt.setFont(new Font("Serif", Font.BOLD, 45));
-                            bt.setText("O");
+                            bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
+                            bt[f][c].setText("O");
                             b.Pos2(f, c);
                         }
                     }
@@ -594,9 +594,10 @@ public class Traitement implements ActionListener {
                 }
             } else if (joueur.quelJoueur() == 2) {
                 if (b.quelPos(f, c) == 2) {
+                    bt[b.quelLigne()][b.quelCol()].setBackground(Color.lightGray);
                     b.setLigne(f);
                     b.setColonne(c);
-
+                    bt[f][c].setBackground(Color.darkGray);
                 }
             }
         }

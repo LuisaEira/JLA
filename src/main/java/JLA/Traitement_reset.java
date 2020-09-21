@@ -15,15 +15,7 @@ import javax.swing.JLabel;
 public class Traitement_reset implements ActionListener {
     private JLabel reset_x;
     private JLabel reset_o;
-    private JButton but11;
-    private JButton but12;
-    private JButton but13;
-    private JButton but21;
-    private JButton but22;
-    private JButton but23;
-    private JButton but31;
-    private JButton but32;
-    private JButton but33;
+    private JButton but[][] = new JButton[3][3];
     private Position  bu;
     private int  NRan;
     public Selection_Joueur joueur;
@@ -32,18 +24,10 @@ public class Traitement_reset implements ActionListener {
     private Result res;
     private Band band;        
             
-    public Traitement_reset(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout11,JButton bout12,JButton bout13,JButton bout21,JButton bout22,JButton bout23,JButton bout31,JButton bout32,JButton bout33,Position bo,Result result,Band ba){
+    public Traitement_reset(Compteur Comp,JLabel Mens,Selection_Joueur Joueur,JLabel r_x,JLabel r_o,JButton bout[][],Position bo,Result result,Band ba){
         reset_x=r_x;
         reset_o=r_o;
-        but11=bout11;
-        but12=bout12;
-        but13=bout13;
-        but21=bout21;
-        but22=bout22;
-        but23=bout23;
-        but31=bout31;
-        but32=bout32;
-        but33=bout33;
+        but=bout;
         bu=bo;
         joueur=Joueur;
         message=Mens;
@@ -56,15 +40,15 @@ public class Traitement_reset implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         reset_x.setText("0");
         reset_o.setText("0");
-        but11.setText("");
-        but12.setText("");
-        but13.setText("");
-        but21.setText("");
-        but22.setText("");
-        but23.setText("");
-        but31.setText("");
-        but32.setText("");
-        but33.setText("");
+        but[0][0].setText("");
+        but[0][1].setText("");
+        but[0][2].setText("");
+        but[1][0].setText("");
+        but[1][1].setText("");
+        but[1][2].setText("");
+        but[2][0].setText("");
+        but[2][1].setText("");
+        but[2][2].setText("");
         bu.resPos();
         cont.resetComp();
         res.resetRx();
