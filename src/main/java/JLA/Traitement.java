@@ -752,11 +752,10 @@ public class Traitement implements ActionListener {
             message.setText(J2.getText() + ", c'est a toi");
         else
             message.setText(J1.getText() + ", c'est a toi");
-        if((b.quelPos(f,0) == b.quelPos(f,1) && b.quelPos(f,1) == b.quelPos(f,2)) ||
-        (b.quelPos(0,0) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,2)) ||
-        (b.quelPos(0,c) == b.quelPos(1,c) && b.quelPos(1,c) == b.quelPos(2,c)) ||
-        (b.quelPos(0,0) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,2)) ||
-        (b.quelPos(0,2) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,0)) ){
+        if((b.quelPos(f,0) == b.quelPos(f,1) && b.quelPos(f,1) == b.quelPos(f,2) && b.quelPos(f,2) != 0) ||
+        (b.quelPos(0,0) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,2) && b.quelPos(2,2) != 0) ||
+        (b.quelPos(0,c) == b.quelPos(1,c) && b.quelPos(1,c) == b.quelPos(2,c) && b.quelPos(2,c) != 0) ||
+        (b.quelPos(0,2) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,0) && b.quelPos(2,0) != 0) ){
             if (joueur.quelJoueur() == 1)
                 message.setText(J1.getText() + " a gagne (Press Start New Game or New Round)");
             else
