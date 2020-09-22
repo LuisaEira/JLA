@@ -590,124 +590,147 @@ public class Traitement implements ActionListener {
                     joueur.Joueur_1();
                 }
             }
+
+
         } else if (n_tour.isComp() >= 6) {
-            if (flag.isDown()){
-                if (joueur.quelJoueur() == b.quelPos(f, c)) {
+            if (band.isBand() == 0){
+                if (flag.isDown()){
+                    if (joueur.quelJoueur() == b.quelPos(f, c)) {
+                        switch (f){
+                            case 0 :
+                                switch (c){
+                                    case 0 :
+                                        if((b.quelPos(1,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(0,1) == 0) ){
+                                            deplacement1();   
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                    case 1 :
+                                        if((b.quelPos(0,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(0,2) == 0) ){
+                                            deplacement1();                                                                               
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                    case 2 :
+                                        if((b.quelPos(0,1) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(1,2) == 0) ){
+                                            deplacement1();                                                                               
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                }
+                            break;
+                            case 1:
+                                switch (c){
+                                    case 0 :
+                                        if((b.quelPos(0,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,0) == 0) ){
+                                            deplacement1();                                                                               
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                    case 1 :
+                                        deplacement1();                                                                       
+                                        break;
+                                    case 2 :
+                                        if((b.quelPos(0,2) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,2) == 0) ){
+                                            deplacement1();                                                                               
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                }
+                            break;
+                            case 2 :
+                                switch (c){
+                                    case 0 :
+                                        if((b.quelPos(1,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,1) == 0) ){
+                                            deplacement1();                                                                               
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                    case 1 :
+                                        if((b.quelPos(2,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,2) == 0) ){
+                                            deplacement1();                                                                               
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                    case 2 :
+                                        if((b.quelPos(2,1) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(1,2) == 0) ){
+                                            deplacement1();                                                                               
+                                        } else
+                                            message.setText("Wait, that's illegal !");
+                                        break;
+                                }
+                            break;
+                        }
+                    } 
+                } else{
                     switch (f){
                         case 0 :
                             switch (c){
                                 case 0 :
-                                    if((b.quelPos(1,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(0,1) == 0) ){
-                                        deplacement1();   
-                                    }
+                                    if(((b.quelPos(1,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(0,1) == 3)) && (b.quelPos(f,c) == 0)){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                                 case 1 :
-                                    if((b.quelPos(0,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(0,2) == 0) ){
-                                        deplacement1();                                                                               
-                                    }
+                                    if(((b.quelPos(0,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(0,2) == 3))&& (b.quelPos(f,c) == 0) ){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                                 case 2 :
-                                    if((b.quelPos(0,1) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(1,2) == 0) ){
-                                        deplacement1();                                                                               
-                                    }
+                                    if(((b.quelPos(0,1) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(1,2) == 3))&& (b.quelPos(f,c) == 0) ){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                             }
                         break;
                         case 1:
                             switch (c){
                                 case 0 :
-                                    if((b.quelPos(0,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,0) == 0) ){
-                                        deplacement1();                                                                               
-                                    }
+                                    if(((b.quelPos(0,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,0) == 3))&& (b.quelPos(f,c) == 0) ){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                                 case 1 :
-                                    deplacement1();                                                                       
+                                    if((b.quelPos(1,1) != 3)&& (b.quelPos(f,c) == 0))
+                                        deplacement2();
+                                    else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                                 case 2 :
-                                    if((b.quelPos(0,2) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,2) == 0) ){
-                                        deplacement1();                                                                               
-                                    }
+                                    if(((b.quelPos(0,2) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,2) == 3))&& (b.quelPos(f,c) == 0) ){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                             }
                         break;
                         case 2 :
                             switch (c){
                                 case 0 :
-                                    if((b.quelPos(1,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,1) == 0) ){
-                                        deplacement1();                                                                               
-                                    }
+                                    if(((b.quelPos(1,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,1) == 3))&& (b.quelPos(f,c) == 0) ){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                                 case 1 :
-                                    if((b.quelPos(2,0) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(2,2) == 0) ){
-                                        deplacement1();                                                                               
-                                    }
+                                    if(((b.quelPos(2,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,2) == 3))&& (b.quelPos(f,c) == 0) ){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                                 case 2 :
-                                    if((b.quelPos(2,1) == 0) || (b.quelPos(1,1) == 0) || (b.quelPos(1,2) == 0) ){
-                                        deplacement1();                                                                               
-                                    }
+                                    if(((b.quelPos(2,1) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(1,2) == 3))&& (b.quelPos(f,c) == 0) ){
+                                        deplacement2();
+                                    } else
+                                            message.setText("Wait, that's illegal !");
                                     break;
                             }
                         break;
                     }
-                } 
-            } else{
-                switch (f){
-                    case 0 :
-                        switch (c){
-                            case 0 :
-                                if((b.quelPos(1,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(0,1) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                            case 1 :
-                                if((b.quelPos(0,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(0,2) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                            case 2 :
-                                if((b.quelPos(0,1) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(1,2) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                        }
-                    break;
-                    case 1:
-                        switch (c){
-                            case 0 :
-                                if((b.quelPos(0,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,0) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                            case 1 :
-                                deplacement2();
-                                break;
-                            case 2 :
-                                if((b.quelPos(0,2) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,2) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                        }
-                    break;
-                    case 2 :
-                        switch (c){
-                            case 0 :
-                                if((b.quelPos(1,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,1) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                            case 1 :
-                                if((b.quelPos(2,0) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(2,2) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                            case 2 :
-                                if((b.quelPos(2,1) == 3) || (b.quelPos(1,1) == 3) || (b.quelPos(1,2) == 3) ){
-                                    deplacement2();
-                                }
-                                break;
-                        }
-                    break;
                 }
             }
         }
@@ -731,7 +754,9 @@ public class Traitement implements ActionListener {
             message.setText(J1.getText() + ", c'est a toi");
         if((b.quelPos(f,0) == b.quelPos(f,1) && b.quelPos(f,1) == b.quelPos(f,2)) ||
         (b.quelPos(0,0) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,2)) ||
-        (b.quelPos(0,c) == b.quelPos(1,c) && b.quelPos(1,c) == b.quelPos(2,c))){
+        (b.quelPos(0,c) == b.quelPos(1,c) && b.quelPos(1,c) == b.quelPos(2,c)) ||
+        (b.quelPos(0,0) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,2)) ||
+        (b.quelPos(0,2) == b.quelPos(1,1) && b.quelPos(1,1) == b.quelPos(2,0)) ){
             if (joueur.quelJoueur() == 1)
                 message.setText(J1.getText() + " a gagne (Press Start New Game or New Round)");
             else
