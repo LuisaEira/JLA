@@ -9,6 +9,8 @@ package JLA;
  *
  * @author lucaa
  */
+
+//Class crée pour faire les changements de tour et pour que le jeu sache qui c'est a jouer
 public class Selection_Joueur {
     private int Joueur;
     public Selection_Joueur(int J){

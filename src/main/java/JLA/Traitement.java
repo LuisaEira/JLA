@@ -59,14 +59,14 @@ public class Traitement implements ActionListener {
 //        bt.setFont(new Font("Serif", Font.BOLD, 50));
 //        bt.setText("X");
         //System.out.println(joueur);
-        if (n_tour.isComp() < 6 && b.quelPos(f, c) != 1 && b.quelPos(f, c) != 2 && band.isBand() == 0) {
+        if (n_tour.isComp() < 6 && b.quelPos(f, c) != 1 && b.quelPos(f, c) != 2 && band.isBand() == 0) { // Condition, pour séparer entre phase de positionnement et déplacement
 //            System.out.println(band.isBand2());
-            if (band.isBand2() == 0) {
-                if (joueur.quelJoueur() == 1) {
+            if (band.isBand2() == 0) { //Flag pour ne pas rentrer s'il y a un joueur qui a gagné dans la phase de positionnement
+                if (joueur.quelJoueur() == 1) { //Condition pour savoir qui est qui doit jouer
                     bt[f][c].setFont(new Font("Serif", Font.BOLD, 45));
                     bt[f][c].setText("X");
                     b.Pos1(f, c);
-                    if (b.quelPos(0, 0) == b.quelPos(0, 1) && b.quelPos(0, 0) == b.quelPos(0, 2)) {
+                    if (b.quelPos(0, 0) == b.quelPos(0, 1) && b.quelPos(0, 0) == b.quelPos(0, 2)) { //Différents conditions pour vérifier si quelqu'un a gagné
                         if (b.quelPos(0, 0) == 1) {
                             message.setText(J1.getText() + " a gagne (Press Start New Game or New Round)");
                             res.setRx();
@@ -276,9 +276,7 @@ public class Traitement implements ActionListener {
                         message.setText(J1.getText() + ", c'est a toi");
                     }
                 }
-//                System.out.println(band.isBand2() + "no entro");
-            } else if (band.isBand2() == 1) {
-//                System.out.println(band.isBand2() + "entro");
+            } else if (band.isBand2() == 1) { // Flag pour 
                 if (joueur.quelJoueur() == 1) {
                     if (b.quelLignedef() == 0 && b.quelColdef() == 0) {
                         if (((f == 0 && c == 1) || (f == 1 && c == 0) || (f == 1 && c == 1)) && b.quelPos(f, c) == 0) {
@@ -593,7 +591,7 @@ public class Traitement implements ActionListener {
             }
 
 
-        } else if (n_tour.isComp() >= 6) {
+        } else if (n_tour.isComp() >= 6) { 
 
     /*
         The following part of the code is responsable for the second phase of 

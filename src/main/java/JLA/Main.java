@@ -42,6 +42,7 @@ public class Main {
         Fen.getContentPane().setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         
+        //Création de tous les noeuf boutons pour faire le tableaux du jeu
         //JButton bt11 = new JButton("");
         bt[0][0] = new JButton("");
         constraints.gridx = 0;
@@ -139,6 +140,7 @@ public class Main {
         constraints.weighty = 0.0;
         constraints.weightx = 0.0;
         
+        
         JLabel blanc2 = new JLabel("");
         constraints.weightx = 1.0;
         constraints.gridx = 3;
@@ -168,7 +170,7 @@ public class Main {
         constraints.fill = GridBagConstraints.CENTER;
         Fen.getContentPane().add(J2,constraints);
         
-        JLabel JX = new JLabel(Joueur_x);
+        JLabel JX = new JLabel(Joueur_x); //Ajoute le nom du joueur 1 au panneau du jeu
         JX.setFont(new Font("Serif", Font.BOLD, 20));
         constraints.weightx = 1.0;
         constraints.gridx = 5;
@@ -178,7 +180,7 @@ public class Main {
         constraints.anchor = GridBagConstraints.WEST;
         Fen.getContentPane().add(JX,constraints);
         
-        JLabel JO = new JLabel(Joueur_o);
+        JLabel JO = new JLabel(Joueur_o); //Ajoute le nom du joueur 2 au panneau du jeu
         JO.setFont(new Font("Serif", Font.BOLD, 20));
         constraints.weightx = 1.0;
         constraints.gridx = 5;
@@ -188,7 +190,7 @@ public class Main {
         constraints.anchor = GridBagConstraints.WEST;
         Fen.getContentPane().add(JO,constraints);
         
-        JLabel res = new JLabel("Resultat");
+        JLabel res = new JLabel("Resultat"); 
         res.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 1.0;
         constraints.gridx = 6;
@@ -198,7 +200,7 @@ public class Main {
         constraints.fill = GridBagConstraints.CENTER;
         Fen.getContentPane().add(res,constraints);
         
-        JLabel res_x = new JLabel(resultee.isRx());
+        JLabel res_x = new JLabel(resultee.isRx()); //Ajoute le nombre de parties gagnés par le joueur 1
         res_x.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 1.0;
         constraints.gridx = 6;
@@ -208,7 +210,7 @@ public class Main {
         constraints.fill = GridBagConstraints.CENTER;
         Fen.getContentPane().add(res_x,constraints);
         
-        JLabel res_o = new JLabel(resultee.isRo());
+        JLabel res_o = new JLabel(resultee.isRo()); //Ajoute le nombre de parties gagnés par le joueur 2
         res_o.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 1.0;
         constraints.gridx = 6;
@@ -219,7 +221,7 @@ public class Main {
         Fen.getContentPane().add(res_o,constraints);
         
         
-        JButton NR = new JButton("New Round");
+        JButton NR = new JButton("New Round"); //Ajoute le bouton pour recommencer une nouvelle partie 
         constraints.weightx = 1.0;
         constraints.gridx = 5;
         constraints.gridy = 1;
@@ -228,7 +230,7 @@ public class Main {
         constraints.fill = GridBagConstraints.BOTH;
         Fen.getContentPane().add(NR,constraints);
         
-        JButton NG = new JButton("Start New Game");
+        JButton NG = new JButton("Start New Game"); //Ajoute le bouton pour commencer un autre tour
         constraints.weightx = 1.0;
         constraints.gridx = 4;
         constraints.gridy = 1;

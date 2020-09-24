@@ -9,6 +9,8 @@ package JLA;
  *
  * @author lucaa
  */
+
+//Class laquelle change les jlabels ou sont écris les resultats sur le panneau de l'application
 public class Result {
     private String rx;
     private String ro;

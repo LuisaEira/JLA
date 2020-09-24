@@ -9,6 +9,7 @@ package JLA;
  *
  * @author lucaa
  */
+// Class laquelle ne permet pas de possitionner jettons ne les déplacer une fois qu'un des deux joueurs a gagné
 public class Band {
     private int band;
     private int band2;
