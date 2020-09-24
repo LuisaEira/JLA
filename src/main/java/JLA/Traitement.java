@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+    This class is used to treat what happens when a player selects a board
+    space.
+
  */
 package JLA;
 //
@@ -593,6 +594,14 @@ public class Traitement implements ActionListener {
 
 
         } else if (n_tour.isComp() >= 6) {
+
+    /*
+        The following part of the code is responsable for the second phase of 
+        the game. The code analyses each of the board spaces separately with
+        the switch commands. For each case the if command checks if the move is
+        legal and calls the needed function.
+    */
+
             if (band.isBand() == 0){
                 if (flag.isDown()){
                     if (joueur.quelJoueur() == b.quelPos(f, c)) {
@@ -735,6 +744,13 @@ public class Traitement implements ActionListener {
             }
         }
     }
+
+
+    /*
+        The function deplacement1() is called when the player selects the piece
+        he wants to move. The function deplacement2() is called when the player
+        selects where in whe board he wants to move it to.
+    */
 
     public void deplacement1(){
         bt[f][c].setText("");

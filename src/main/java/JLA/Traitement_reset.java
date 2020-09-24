@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+    This class is used to start a new game. It resets the flag, the band, the
+    positions and the results. It also creates pop-ups to enter the players
+    names.
+
  */
 package JLA;
 //

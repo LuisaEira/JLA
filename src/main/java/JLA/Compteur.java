@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+    This class creates a counter to count the pieces that have been placed.
+    After 6 pieces are placed in the board the game enters the second phase.
+
  */
 package JLA;
 //

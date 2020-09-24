@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+    This class is used to start a new round. It resets the flag and the band,
+    as well as all the positions.
+
  */
 package JLA;
 //

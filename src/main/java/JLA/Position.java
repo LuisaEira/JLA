@@ -1,7 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+    This class sets a matrix with a variable for each case in the board.
+    If the variable is 0 (Set with Pos0()) the board space is empty.
+    If the variable is 1, the board space is ocupied with a X.
+    If the variable is 2, the board space is ocupied with a O.
+    If the variable is 3, the board space has just been emptied up because
+    one of the players is moving ther piece. After this move is done the 
+    function clear() must be called to reset the variable back to 0.
+
  */
 package JLA;
 //
