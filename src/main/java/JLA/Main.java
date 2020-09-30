@@ -33,9 +33,7 @@ public class Main {
         Band band = new Band();
         Flag flag = new Flag();
         String Joueur_x = ""; //nom joueur 1 - jeton X
-//        Joueur_x = JOptionPane.showInputDialog("Saisir le prenom du joueur X:");
         String Joueur_o = ""; //nom joueur 2 - jeton O
-//        Joueur_o = JOptionPane.showInputDialog("Saisir le prenom du joueur O:");
         JFrame Fen = new JFrame();
         Fen.setSize(dim_x_fen,dim_y_fen);
         Fen.setTitle("Jeu de L'Araignee");
@@ -54,8 +52,6 @@ public class Main {
         constraints.fill = GridBagConstraints.BOTH;
         bt[0][0].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[0][0],constraints);
-//        constraints.weighty = 1.0;
-//        constraints.weightx = 1.0;
         
 //        JButton bt12 = new JButton("");
         bt[0][1] = new JButton("");
@@ -250,14 +246,6 @@ public class Main {
         constraints.fill = GridBagConstraints.BOTH;
         Fen.getContentPane().add(Mensaje,constraints);
         
-//        JButton Sel = new JButton("Selection Jetton");
-//        constraints.weightx = 1.0;
-//        constraints.gridx = 4;
-//        constraints.gridy = 8;
-//        constraints.gridwidth = 1;
-//        constraints.gridheight = 1;
-//        constraints.fill = GridBagConstraints.BOTH;
-//        Fen.getContentPane().add(Sel,constraints);
         
         
         NG.addActionListener(new Traitement_reset(flag,JX,JO,n_tour,Mensaje,joueur,res_x,res_o,bt,b_mat,resultee,band));
@@ -272,18 +260,6 @@ public class Main {
         bt[2][1].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,2,1,res_x,res_o,resultee,band));
         bt[2][2].addActionListener(new Traitement(flag,JX,JO,Mensaje,joueur,bt,b_mat,n_tour,2,2,res_x,res_o,resultee,band));
 
-        
-//        Sel.addActionListener(new Traitement_sel(band,b_mat,bt,n_tour));
-
-//        URL url = this.getClass().getResource("direccion de la.imagen");
-//
-//        ImageIcon icon = new ImageIcon(url);
-//
-//        JLabel label = new JLabel();
-//        label.setIcon(icon);
-//
-//        JButton boton = new JButton();
-//        boton.setIcon(icon);
     }
     
 }

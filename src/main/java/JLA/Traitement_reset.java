@@ -63,7 +63,7 @@ public class Traitement_reset implements ActionListener {
         res.resetRx();
         res.resetRo();
         band.resetBand();
-        band.resetBand2();
+//        band.resetBand2();
         Random miN = new Random();
         NRan = miN.nextInt(100);
         String Joueur_x;
@@ -74,12 +74,10 @@ public class Traitement_reset implements ActionListener {
         jo.setText(Joueur_o);
         if (NRan<50){
             joueur.Joueur_1();
-//            System.out.println(J);
             message.setText(Joueur_x + ", c'est a Toi");
         }
         else if(NRan>=50){
             joueur.Joueur_2();
-//            System.out.println(J);
             message.setText(Joueur_o + ", c'est a Toi");
         }
         flag.Down();

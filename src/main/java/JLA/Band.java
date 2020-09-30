@@ -12,27 +12,27 @@ package JLA;
 // Class laquelle ne permet pas de possitionner jettons ne les déplacer une fois qu'un des deux joueurs a gagné
 public class Band {
     private int band;
-    private int band2;
+//    private int band2;
     public Band(){
         band=0;
-        band2=0;
+//        band2=0;
     }
     public int isBand(){
         return band;
     }
-    public int isBand2(){
-        return band2;
-    }
+//    public int isBand2(){
+//        return band2;
+//    }
     public void setBand(){
         band=1;
     }
-    public void setBand2(){
-        band2=1;
-    }
+//    public void setBand2(){
+//        band2=1;
+//    }
     public void resetBand(){
         band=0;
     }
-    public void resetBand2(){
-        band2=0;
-    }
+//    public void resetBand2(){
+//        band2=0;
+//    }
 }

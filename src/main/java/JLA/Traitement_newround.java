@@ -56,7 +56,7 @@ public class Traitement_newround implements ActionListener {
         bu.resPos();
         cont.resetComp();
         band.resetBand();
-        band.resetBand2();
+//        band.resetBand2();
         Random miN = new Random();
         nRan = miN.nextInt(100);
         if (nRan<50){
