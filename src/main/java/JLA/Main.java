@@ -12,17 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 
-/**
- *
- * @author lucaa
- */
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
         int dim_x_fen=1050;
         int dim_y_fen=450;
         Selection_Joueur joueur = new Selection_Joueur(0);
@@ -40,8 +34,7 @@ public class Main {
         Fen.getContentPane().setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         
-        //Création de tous les noeuf boutons pour faire le tableaux du jeu
-        //JButton bt11 = new JButton("");
+        //Crï¿½ation de tous les noeuf boutons pour faire le tableaux du jeu
         bt[0][0] = new JButton("");
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -53,7 +46,7 @@ public class Main {
         bt[0][0].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[0][0],constraints);
         
-//        JButton bt12 = new JButton("");
+
         bt[0][1] = new JButton("");
         constraints.gridx = 1;
         constraints.gridy = 0;
@@ -63,7 +56,7 @@ public class Main {
         bt[0][1].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[0][1],constraints);
         
-//        JButton bt13 = new JButton("");
+
         bt[0][2] = new JButton("");
         constraints.gridx = 2;
         constraints.gridy = 0;
@@ -73,7 +66,7 @@ public class Main {
         bt[0][2].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[0][2],constraints);
         
-//        JButton bt21 = new JButton("");
+
         bt[1][0] = new JButton("");
         constraints.gridx = 0;
         constraints.gridy = 3;
@@ -83,7 +76,7 @@ public class Main {
         bt[1][0].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[1][0],constraints);
         
-//        JButton bt22 = new JButton("");
+
         bt[1][1] = new JButton("");
         constraints.gridx = 1;
         constraints.gridy = 3;
@@ -93,7 +86,7 @@ public class Main {
         bt[1][1].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[1][1],constraints);
         
-//        JButton bt23 = new JButton("");
+
         bt[1][2] = new JButton("");
         constraints.gridx = 2;
         constraints.gridy = 3;
@@ -103,7 +96,7 @@ public class Main {
         bt[1][2].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[1][2],constraints);
         
-//        JButton bt31 = new JButton("");
+
         bt[2][0] = new JButton("");
         constraints.gridx = 0;
         constraints.gridy = 6;
@@ -113,7 +106,7 @@ public class Main {
         bt[2][0].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[2][0],constraints);
         
-//        JButton bt32 = new JButton("");
+
         bt[2][1] = new JButton("");
         constraints.gridx = 1;
         constraints.gridy = 6;
@@ -123,7 +116,7 @@ public class Main {
         bt[2][1].setBackground(Color.cyan);
         Fen.getContentPane().add(bt[2][1],constraints);
         
-//        JButton bt33 = new JButton("");
+
         bt[2][2] = new JButton("");
         constraints.gridx = 2;
         constraints.gridy = 6;
@@ -196,7 +189,7 @@ public class Main {
         constraints.fill = GridBagConstraints.CENTER;
         Fen.getContentPane().add(res,constraints);
         
-        JLabel res_x = new JLabel(resultee.isRx()); //Ajoute le nombre de parties gagnés par le joueur 1
+        JLabel res_x = new JLabel(resultee.isRx()); //Ajoute le nombre de parties gagnï¿½s par le joueur 1
         res_x.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 1.0;
         constraints.gridx = 6;
@@ -206,7 +199,7 @@ public class Main {
         constraints.fill = GridBagConstraints.CENTER;
         Fen.getContentPane().add(res_x,constraints);
         
-        JLabel res_o = new JLabel(resultee.isRo()); //Ajoute le nombre de parties gagnés par le joueur 2
+        JLabel res_o = new JLabel(resultee.isRo()); //Ajoute le nombre de parties gagnï¿½s par le joueur 2
         res_o.setFont(new Font("Serif", Font.BOLD, 16));
         constraints.weightx = 1.0;
         constraints.gridx = 6;

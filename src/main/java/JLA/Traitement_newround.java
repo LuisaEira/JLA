@@ -12,10 +12,7 @@ import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-/**
- *
- * @author lucaa
- */
+
 public class Traitement_newround implements ActionListener {
     private JLabel reset_x;
     private JLabel reset_o;

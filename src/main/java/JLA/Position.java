@@ -10,11 +10,7 @@
 
  */
 package JLA;
-//
-/**
- *
- * @author lucaa
- */
+ 
 public class Position {
     private int b[][] = new int[3][3];
     private int ligne;

@@ -1,16 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JLA;
 
-/**
- *
- * @author lucaa
- */
-
-//Class laquelle change les jlabels ou sont écris les resultats sur le panneau de l'application
+//Class laquelle change les jlabels ou sont ï¿½cris les resultats sur le panneau de l'application
 public class Result {
     private String rx;
     private String ro;

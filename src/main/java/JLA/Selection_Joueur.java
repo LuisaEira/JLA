@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JLA;
-//
-/**
- *
- * @author lucaa
- */
 
-//Class crée pour faire les changements de tour et pour que le jeu sache qui c'est a jouer
+
+//Class crï¿½e pour faire les changements de tour et pour que le jeu sache qui c'est a jouer
 public class Selection_Joueur {
     private int Joueur;
     public Selection_Joueur(int J){

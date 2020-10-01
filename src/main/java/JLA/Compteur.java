@@ -5,11 +5,7 @@
 
  */
 package JLA;
-//
-/**
- *
- * @author lucaa
- */
+
 public class Compteur {
     private int cont;
     public Compteur(int n){
